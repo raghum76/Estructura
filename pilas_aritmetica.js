@@ -9,6 +9,13 @@ class pila{
         this.count++;
         return this.data;
     }
+
+    pop(){
+        this.count--;
+        const element = this.data[this.count];
+        return element;
+    }
+
     
 }
 
