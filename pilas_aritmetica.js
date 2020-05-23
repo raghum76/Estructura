@@ -16,6 +16,10 @@ class pila{
         return element;
     }
 
+    peek(){
+        return this.data[this.count-1];
+    }
+
     
 }
 
