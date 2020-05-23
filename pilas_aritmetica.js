@@ -20,7 +20,7 @@ class pila{
         return this.data[this.count-1];
     }
 
-    print(){
+    count(){
         return this.count;
     }
 
@@ -28,4 +28,8 @@ class pila{
         return this.data;
     }
 }
+
+const dato = new pila();
+dato.push(5);
+console.log(dato.count);
 
