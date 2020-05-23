@@ -1,19 +1,20 @@
+console.clear();
 class pila{
-    constructor(data){
+    constructor(){
         this.data = {};
         this.count = 0;
     }
 
     push(info){
-        this.data[this.count] = element;
+        this.data[this.count] = info;
         this.count++;
         return this.data;
     }
 
     pop(){
         this.count--;
-        const element = this.data[this.count];
-        return element;
+        const elemento = this.data[this.count];
+        return elemento;
     }
 
     peek(){
