@@ -20,6 +20,12 @@ class pila{
         return this.data[this.count-1];
     }
 
-    
+    print(){
+        return this.count;
+    }
+
+    print(){
+        return this.data;
+    }
 }
 
