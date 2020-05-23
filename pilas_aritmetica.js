@@ -5,9 +5,3 @@ class pila{
     }
 }
 
-class linkedList{
-    constructor(){
-        this.head = null;
-        this.count = 0;
-    }
-}
