@@ -31,15 +31,37 @@ class pila{
     }
 }
 
+function PDP(d){
+    if(d == "+" || d == "-"){
+        return 1;
+    }else if(d == "/" || d == "*"){
+        return 2;
+    }else if(d == "^"){
+        return 3;
+    }else{
+        return 0;
+    }
+}
+
+function PFP(d){
+        if(d == "+" || d == "-"){
+            return 1;
+        }else if(d == "*" || d == "/"){
+            return 2;
+        }else{
+            return 4;
+        }
+}
+
 const Operadores = new pila();
-const Arr = [];
+const Arr = new pila();
 
 let infija = [2,"+",1,"*",3,"*",4,"/",6,"+",4,"-",2,"+",9,"/",3];
 
 while(infija){
     for(let i = 0; i<infija.length; i++){
-        if(typeof infija === "number"){
-            Arr.push(i);
+        if(typeof infija[i] === "number"){
+           console.log("numero")
         }else{
             switch(Operadores){
                 case "+":
@@ -53,7 +75,8 @@ while(infija){
                 case "^":
                     break;
             }
-            Operadores.push(i);
+            //operadores.push(i);
         }
     }
 }
+
