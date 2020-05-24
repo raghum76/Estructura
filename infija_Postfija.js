@@ -58,25 +58,8 @@ const Arr = new pila();
 
 let infija = [2,"+",1,"*",3,"*",4,"/",6,"+",4,"-",2,"+",9,"/",3];
 
-while(infija){
-    for(let i = 0; i<infija.length; i++){
-        if(typeof infija[i] === "number"){
-           console.log("numero")
-        }else{
-            switch(Operadores){
-                case "+":
-                    break;
-                case "-":
-                    break;
-                case "*":
-                    break;
-                case "/":
-                    break;
-                case "^":
-                    break;
-            }
-            //operadores.push(i);
-        }
-    }
-}
+console.log("Expresion infija: " + infija);
+
+
+
 
