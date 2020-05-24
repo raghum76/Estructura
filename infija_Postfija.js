@@ -57,8 +57,12 @@ const Operadores = new pila();
 const Arr = new pila();
 
 let infija = [2,"+",1,"*",3,"*",4,"/",6,"+",4,"-",2,"+",9,"/",3];
+var tmp = "";
+for(var i = 0; i<infija.length; i++){
+    tmp += " " + infija[i];
+}
 
-console.log("Expresion infija: " + infija);
+console.log("Expresion infija: " + tmp);
 
 
 
