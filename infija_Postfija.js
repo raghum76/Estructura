@@ -41,6 +41,18 @@ while(infija){
         if(typeof infija === "number"){
             Arr.push(i);
         }else{
+            switch(Operadores){
+                case "+":
+                    break;
+                case "-":
+                    break;
+                case "*":
+                    break;
+                case "/":
+                    break;
+                case "^":
+                    break;
+            }
             Operadores.push(i);
         }
     }
