@@ -14,7 +14,7 @@ class pila{
     pop(){
         this.count--;
         const elemento = this.data[this.count];
-        delete this.data[this.count;]
+        delete this.data[this.count];
         return elemento;
     }
 
@@ -38,10 +38,11 @@ dato.push(3);
 dato.push(6);
 console.log("Numero de datos " + dato.count);
 console.log("Datos: ");
-//for(var i = dato.count; i>= 0;i--)
-    console.log(dato.print());
+console.log(dato.print());
+console.log("Cima: " + dato.peek());
+console.log("--------------------------------");
 console.log("Eliminamos el " + dato.pop());
 console.log("Numero de datos " + dato.count);
-console.log("Datos: ");
-//for(var i = dato.count; i>= 0;i--)
-    console.log(dato.print());
+console.log("Datos: " );
+console.log(dato.print());
+console.log("Cima: " + dato.peek());
