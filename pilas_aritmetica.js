@@ -14,6 +14,7 @@ class pila{
     pop(){
         this.count--;
         const elemento = this.data[this.count];
+        delete this.data[this.count;]
         return elemento;
     }
 
@@ -32,5 +33,15 @@ class pila{
 
 const dato = new pila();
 dato.push(5);
-console.log(dato.count);
-
+dato.push(4);
+dato.push(3);
+dato.push(6);
+console.log("Numero de datos " + dato.count);
+console.log("Datos: ");
+//for(var i = dato.count; i>= 0;i--)
+    console.log(dato.print());
+console.log("Eliminamos el " + dato.pop());
+console.log("Numero de datos " + dato.count);
+console.log("Datos: ");
+//for(var i = dato.count; i>= 0;i--)
+    console.log(dato.print());
