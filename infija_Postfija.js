@@ -64,6 +64,39 @@ for(var i = 0; i<infija.length; i++){
 
 console.log("Expresion infija: " + tmp);
 
+var tempo = 0;
+for(let i = 0; i<infija.length;i++){
+    if(typeof infija[i] == "number"){
+        Arr.push(infija[i]);
+    }
+    if(infija[i] == "+" || infija[i] == "-" || infija[i] == "*" || infija[i] == "/" || infija[i] == "^" || infija[i] == "("){
+        if(Operadores.count > 0){
+            tempo = Operadores.pop();
+            while(Operadores.count > 0 && PDP(tempo) >= PFP(infija[i])){
+                Arr.push(tempo);
+                tempo = Operadores.pop();
+            }
+            Operadores.push(tempo);
+            Operadores.push(infija[i]);
+        }else{
+            Operadores.push(infija[i]);
+        }
+    }
+    if(infija[i] == ")");{
+        if(Operadores.count > 0){
+            tempo = Operadores.pop();
+            while(Operadores.count > 0 && tempo != "("){
+                Arr.push(tempo);
+                tempo = Operadores.pop();
+            }
+        }
+    }
+}
 
+while(Operadores.count > 0 && dato != "("){
+    Arr.push(Operadores.pop());
+}
+
+console.log(Arr.print());
 
 
