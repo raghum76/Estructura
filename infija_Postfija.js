@@ -54,7 +54,7 @@ function PFP(d){
 }
 
 const Operadores = new pila();
-const Arr = new pila();
+const Arr = [];
 
 let infija = [2,"+",1,"*",3,"*",4,"/",6,"+",4,"-",2,"+",9,"/",3];
 var tmp = "";
@@ -64,12 +64,11 @@ for(var i = 0; i<infija.length; i++){
 
 console.log("Expresion infija: " + tmp);
 
-var tempo = 0;
+var tempo;
 for(let i = 0; i<infija.length;i++){
     if(typeof infija[i] == "number"){
         Arr.push(infija[i]);
-    }
-    if(infija[i] == "+" || infija[i] == "-" || infija[i] == "*" || infija[i] == "/" || infija[i] == "^" || infija[i] == "("){
+    }else if(infija[i] == "+" || infija[i] == "-" || infija[i] == "*" || infija[i] == "/" || infija[i] == "^" || infija[i] == "("){
         if(Operadores.count > 0){
             tempo = Operadores.pop();
             while(Operadores.count > 0 && PDP(tempo) >= PFP(infija[i])){
@@ -97,6 +96,11 @@ while(Operadores.count > 0 && dato != "("){
     Arr.push(Operadores.pop());
 }
 
-console.log(Arr.print());
+var tmp = "";
+for(var i = 0; i<infija.length; i++){
+    tmp += " " + Arr[i];
+}
+
+console.log("Expresion infija: " + tmp);
 
 
