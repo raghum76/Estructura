@@ -31,26 +31,18 @@ class pila{
     }
 }
 
-function PDP(d){
+function prioridad(d){
     if(d == "+" || d == "-"){
         return 1;
     }else if(d == "/" || d == "*"){
         return 2;
     }else if(d == "^"){
         return 3;
+    }else if(d == "(" || d == ")"){
+        return 4;
     }else{
         return 0;
     }
-}
-
-function PFP(d){
-        if(d == "+" || d == "-"){
-            return 1;
-        }else if(d == "*" || d == "/"){
-            return 2;
-        }else{
-            return 4;
-        }
 }
 
 const Operadores = new pila();
@@ -64,13 +56,42 @@ for(var i = 0; i<infija.length; i++){
 
 console.log("Expresion infija: " + tmp);
 
+for(let i = 0; i < infija.length; i++){
+    //console.log(i + " => " +infija[i]);
 
+    if(infija.length > 0){
 
-var tmp = "";
-for(var i = 0; i<infija.length; i++){
-    tmp += " " + Arr[i];
+        if(typeof infija[i] == "number"){
+            Arr.push(infija[i]);
+        }else if(infija[i] == "-" || infija[i] == "+" || infija[i] == "*" || infija[i] == "/" || infija[i] == "^" || infija[i] == "("){
+            var ope = infija[i];
+            if(Operadores.count > 0){
+                if(prioridad(ope) > prioridad(Operadores.peek())){
+                    Operadores.push(ope);
+                }else{
+                    while(prioridad(Operadores.peek()) <= prioridad(ope) && Operadores.count > 0){
+                        var tmpOpe = Operadores.pop();
+                        Arr.push(tmpOpe);
+                    }
+                    Operadores.push(ope);
+                }
+            }else{
+                Operadores.push(ope);
+            }
+        }
+    }else{
+        do{
+            var agregar = Operadores.pop();
+            Arr.push(agregar);
+        }while(Operadores.count != 0);
+    }
 }
 
-console.log("Expresion infija: " + tmp);
+var tmpo = "";
+for(var i = 0; i<infija.length; i++){
+    tmpo += " " + Arr[i];
+}
+
+console.log("Expresion infija: " + tmpo);
 
 
