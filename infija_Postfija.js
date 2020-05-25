@@ -66,13 +66,13 @@ for(let i = 0; i < infija.length; i++){
         }else if(infija[i] == "-" || infija[i] == "+" || infija[i] == "*" || infija[i] == "/" || infija[i] == "^" || infija[i] == "("){
             var ope = infija[i];
             if(Operadores.count > 0){
+                while(prioridad(Operadores.peek()) <= prioridad(ope) && Operadores.count > 0){
+                    var tmpOpe = Operadores.pop();
+                    Arr.push(tmpOpe);
+                }
+                Operadores.push(ope);
+
                 if(prioridad(ope) > prioridad(Operadores.peek())){
-                    Operadores.push(ope);
-                }else{
-                    while(prioridad(Operadores.peek()) <= prioridad(ope) && Operadores.count > 0){
-                        var tmpOpe = Operadores.pop();
-                        Arr.push(tmpOpe);
-                    }
                     Operadores.push(ope);
                 }
             }else{
