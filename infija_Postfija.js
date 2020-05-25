@@ -60,8 +60,8 @@ for(let i = 0; i < infija.length; i++){
     //console.log(i + " => " +infija[i]);
 
     if(infija.length > 0){
-
-        if(typeof infija[i] == "number"){
+        //aqui es mi duda
+        if(typeof infija[i] == "number"){// todo esta guardado como caracter, entonces hasta que hagas la conversion a INT con el ParseInt sabrías si es numero 
             Arr.push(infija[i]);
         }else if(infija[i] == "-" || infija[i] == "+" || infija[i] == "*" || infija[i] == "/" || infija[i] == "^" || infija[i] == "("){
             var ope = infija[i];
